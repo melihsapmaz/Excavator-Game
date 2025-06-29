@@ -24,12 +24,12 @@ The project was built from the ground up, focusing on creating a clean, scalable
 
 The game supports two players on a single keyboard.
 
-| Control | Player 1 (Right side of Keyboard) | Player 2 (Left side of Keyboard) |
+| Control | Player 1 (Left side of Keyboard) | Player 2 (Right side of Keyboard) |
 | :--- | :--- | :--- |
-| Move / Steer | Arrow Keys | WASD Keys |
-| Arm 1 Control | I / K | R / F |
-| Arm 2 Control | O / L | T / G |
-| Pick Up / Drop Load | Numpad 0 | V |
+| Move / Steer | WASD | Arrow Keys |
+| Arm 1 Control | R / F | I / K |
+| Arm 2 Control | T / G | O / L |
+| Pick Up / Drop Load | V | Numpad 0 |
 | P2 Join Game (in Menu) | N/A | Numpad Enter
 
 *Note: The project document specifies P1 on the left and P2 on the right. The `Input Actions` can be easily swapped if needed.* 
