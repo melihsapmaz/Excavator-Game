@@ -8,21 +8,21 @@ The project was built from the ground up, focusing on creating a clean, scalable
 
 ## Features
 
--   [cite_start]**Single & Two-Player Modes:** The game can be played solo or as a competitive split-screen experience. [cite: 2]
--   [cite_start]**Dynamic Game Setup:** Features a main menu scene where players can select their vehicles. [cite: 5] [cite_start]A second player can join on this screen by pressing a dedicated key. [cite: 4] The game scene is then dynamically configured based on these selections.
+-   **Single & Two-Player Modes:** The game can be played solo or as a competitive split-screen experience.
+-   **Dynamic Game Setup:** Features a main menu scene where players can select their vehicles.A second player can join on this screen by pressing a dedicated key. The game scene is then dynamically configured based on these selections.
 -   **Two Distinct Vehicle Types:**
-    -   [cite_start]**Wheel Loader (WL):** Features a two-part arm controlled by two separate radial joints (`HingeJoint`). [cite: 6, 8]
-    -   [cite_start]**Telehandler (TH):** Features a main rotating arm (`HingeJoint`) and a telescoping secondary arm (`ConfigurableJoint`). [cite: 6, 9]
+    -   **Wheel Loader (WL):** Features a two-part arm controlled by two separate radial joints (`HingeJoint`).
+    -   **Telehandler (TH):** Features a main rotating arm (`HingeJoint`) and a telescoping secondary arm (`ConfigurableJoint`).
 -   **Physics-Based Mechanics:** All vehicle and arm movements are driven by the Unity physics engine, using `Rigidbody` forces and `Joints` for realistic interactions.
 -   **Competitive Gameplay Loop:** Players pick up loads and deliver them to a drop zone to score points. The game ends when all loads are delivered, and the player with the highest score wins.
--   **Advanced Event-Driven UI:** The user interface updates efficiently based on C# `event`s, avoiding unnecessary polling in the `Update` loop. [cite_start]It displays shared information (time, total progress) and player-specific information (vehicle, fuel, score) in their respective screen areas during split-screen play. [cite: 16, 17]
--   **Data-Driven Design with ScriptableObjects:** Vehicle statistics (motor force, brake force, fuel capacity, etc.) are managed using `ScriptableObject` assets. [cite_start]This decouples game balance from code, allowing for easy tweaking and scaling (e.g., adding new vehicles without changing code). [cite: 19, 20]
+-   **Advanced Event-Driven UI:** The user interface updates efficiently based on C# `event`s, avoiding unnecessary polling in the `Update` loop. It displays shared information (time, total progress) and player-specific information (vehicle, fuel, score) in their respective screen areas during split-screen play.
+-   **Data-Driven Design with ScriptableObjects:** Vehicle statistics (motor force, brake force, fuel capacity, etc.) are managed using `ScriptableObject` assets. This decouples game balance from code, allowing for easy tweaking and scaling (e.g., adding new vehicles without changing code).
 -   **Decoupled Gameplay Logic:** An event-driven architecture is used for key gameplay events, such as notifying `DropZone`s when a load is dropped anywhere in the world. This creates modular and maintainable code.
 -   **Advanced Physics Stabilization:** Implements manual **Center of Mass** adjustment and a unified **Physics Layer** for each vehicle to prevent common physics instabilities like tipping over and internal collider "fighting".
 
 ## Controls
 
-[cite_start]The game supports two players on a single keyboard. [cite: 2]
+The game supports two players on a single keyboard.
 
 | Control | Player 1 (Right side of Keyboard) | Player 2 (Left side of Keyboard) |
 | :--- | :--- | :--- |
@@ -30,9 +30,9 @@ The project was built from the ground up, focusing on creating a clean, scalable
 | Arm 1 Control | I / K | R / F |
 | Arm 2 Control | O / L | T / G |
 | Pick Up / Drop Load | Numpad 0 | V |
-| P2 Join Game (in Menu) | N/A | [cite_start]Numpad Enter [cite: 4] |
+| P2 Join Game (in Menu) | N/A | Numpad Enter
 
-*Note: The project document specifies P1 on the left and P2 on the right. [cite_start]The `Input Actions` can be easily swapped if needed.* [cite: 3]
+*Note: The project document specifies P1 on the left and P2 on the right. The `Input Actions` can be easily swapped if needed.* 
 
 ## Architectural Highlights (For Reviewers)
 
