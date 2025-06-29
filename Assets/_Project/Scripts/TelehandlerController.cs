@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// This script defines the TelehandlerController class, which manages the telehandler's arm rotation and extension in a Unity game.
 namespace _Project.Scripts {
     public class TelehandlerController : BaseVehicleController {
         [Header("Rotation Arm Control")]
@@ -48,7 +49,7 @@ namespace _Project.Scripts {
                 rotationJoint.useMotor = true;
             }
             else {
-                Debug.LogError("Rotation joint is not assigned to this object!", gameObject);
+                //Debug.LogError("Rotation joint is not assigned to this object!", gameObject);
             }
 
             if (telescopicJoint) {
@@ -57,23 +58,24 @@ namespace _Project.Scripts {
                     positionDamper = telescopicDriveDamper,
                     maximumForce = float.MaxValue
                 };
-                telescopicJoint.zDrive = linearDrive;
+                telescopicJoint.zDrive = linearDrive; // Set the zDrive for telescopic movement
                 _telescopicTargetPosition = telescopicJoint.targetPosition;
             }
             else {
-                Debug.LogError("Telescopic joint is not assigned to this object!", gameObject);
+                //Debug.LogError("Telescopic joint is not assigned to this object!", gameObject);
             }
         }
-        
+
         protected override void FixedUpdate() {
             base.FixedUpdate();
             HandleTelescopicMovement();
             HandleRotation();
         }
 
+        // Handles the rotation of the telehandler arm based on user input.
         private void HandleRotation() {
             if (!rotationJoint) {
-                Debug.LogError("Rotation joint is not assigned.");
+                //Debug.LogError("Rotation joint is not assigned.");
                 return;
             }
 
@@ -82,15 +84,16 @@ namespace _Project.Scripts {
             rotationJoint.motor = motor;
         }
 
+        // Sets the input values for the telehandler arm's rotation and telescopic extension.
         public void SetArmInput(float rotInput, float extInput) {
             _rotationInput = rotInput;
             _telescopicInput = extInput;
         }
 
+        // Handles the telescopic movement of the telehandler arm based on user input.
         private void HandleTelescopicMovement() {
-            
             if (!telescopicJoint) {
-                Debug.LogError("Telescopic joint is not assigned.");
+                //Debug.LogError("Telescopic joint is not assigned.");
                 return;
             }
 
