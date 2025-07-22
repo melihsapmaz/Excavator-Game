@@ -26,7 +26,7 @@ The game supports two players on a single keyboard.
 
 | Control | Player 1 (Left side of Keyboard) | Player 2 (Right side of Keyboard) |
 | :--- | :--- | :--- |
-| Move / Steer | Arrow Keys | WASD Keys |
+| Move / Steer | WASD | Arrow Keys |
 | Arm 1 Control | R / F | I / K |
 | Arm 2 Control | T / G | O / L |
 | Pick Up / Drop Load | V | Numpad 0 |
